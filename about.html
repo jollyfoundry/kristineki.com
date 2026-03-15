@@ -5,10 +5,10 @@
   <title>About — Kristine Ki</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="About Kristine Ki, a designer focused on modern brand identities, packaging, and digital experiences.">
+  <meta name="description" content="Learn more about Kristine Ki, a brand and digital designer known for her warm, collaborative approach and thoughtful design process.">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -16,30 +16,67 @@
 <header>
   <div class="logo">Kristine Ki</div>
   <nav>
-    <a href="/index.html#work">Work</a>
-    <a href="/about.html">About</a>
+    <a href="index.html#work">Work</a>
+    <a href="about.html">About</a>
   </nav>
 </header>
 
-<section class="section dark fade-in">
-  <h2>About</h2>
-  <p>I design modern brand identities, packaging systems, and digital experiences that bring clarity, energy, and purpose to the brands I work with.</p>
-  <p>This page can be expanded with your story, process, and selected clients when you’re ready.</p>
+<section class="hero" style="padding-top: 140px; padding-bottom: 80px; max-width: 800px;">
+  <h1 class="hero-title" style="font-size: 48px; margin-bottom: 32px;">About Kristine</h1>
+
+  <!-- Portrait Placeholder -->
+  <div style="width: 180px; height: 180px; background: rgba(255,255,255,0.08); border-radius: 12px; margin: 0 auto 40px;"></div>
+
+  <p class="hero-summary" style="max-width: 70ch;">
+    Kristine is a brand and digital designer who leads with empathy, clarity, and a genuine love for helping people bring their ideas to life. She believes great design isn’t just about visuals — it’s about listening, understanding, and creating work that feels true to the people behind it.
+  </p>
+</section>
+
+<section class="section" style="max-width: 800px;">
+  <p>
+    With experience across brand identity, packaging, digital design, and campaign systems, she brings a thoughtful, collaborative approach to every project. Whether she’s guiding a client step‑by‑step through the design process or taking the lead with minimal direction, Kristine has a rare ability to translate abstract ideas into work that feels intentional, expressive, and unmistakably right.
+  </p>
+
+  <p>
+    Kristine’s process is grounded in communication and trust. She’s known for her positive energy, her patience, and her ability to make clients feel supported from the first conversation to the final deliverable. She designs <em>with</em> clients when they want to be hands‑on — and confidently takes the reins when they need someone who can see the bigger picture and run with it.
+  </p>
+
+  <p>
+    Her work blends strategy with craft, balancing thoughtful systems with expressive storytelling. The result is design that feels clear, modern, and deeply connected to the people it’s made for.
+  </p>
+
+  <p>
+    Kristine is most energized when she’s helping brands find their voice — visually and emotionally. She thrives in the space where creativity meets collaboration, and she brings warmth, curiosity, and care to every project she touches.
+  </p>
+</section>
+
+<!-- Capabilities Section -->
+<section class="section" style="max-width: 800px;">
+  <h2 style="font-size: 28px; margin-bottom: 24px;">Capabilities</h2>
+
+  <ul style="list-style: none; padding: 0; margin: 0; columns: 2; gap: 24px;">
+    <li style="margin-bottom: 12px;">Brand Identity</li>
+    <li style="margin-bottom: 12px;">Packaging Design</li>
+    <li style="margin-bottom: 12px;">Digital Design</li>
+    <li style="margin-bottom: 12px;">UX/UI</li>
+    <li style="margin-bottom: 12px;">Campaign Systems</li>
+    <li style="margin-bottom: 12px;">Art Direction</li>
+    <li style="margin-bottom: 12px;">Typography</li>
+    <li style="margin-bottom: 12px;">Creative Strategy</li>
+  </ul>
 </section>
 
 <footer>
   <div>© <span id="year"></span> Kristine Ki. All rights reserved.</div>
   <div>
-    <a href="/index.html#work">Work</a>
-    <a href="/about.html">About</a>
+    <a href="index.html#work">Work</a>
+    <a href="about.html">About</a>
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="/main.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
