@@ -19,14 +19,8 @@
 </head>
 
 <body>
-
-<header>
-  <div class="logo">Kristine Ki</div>
-  <nav>
-    <a href="../index.html#work">Work</a>
-    <a href="../about.html">About</a>
-  </nav>
-</header>
+<!-- HEADER INCLUDE -->
+<div data-include="partials/header.html"></div>
 
 <section class="hero fade-in">
   <img src="../images/thumb_milk.jpg" alt="Got Milk campaign">
@@ -94,6 +88,21 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+<!-- FOOTER INCLUDE -->
+<div data-include="partials/footer.html"></div>
+
+<!-- INCLUDE LOADER SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('[data-include]').forEach(el => {
+    fetch(el.getAttribute('data-include'))
+      .then(response => response.text())
+      .then(html => el.innerHTML = html);
+  });
+});
+</script>
+
 
 </body>
 </html>
