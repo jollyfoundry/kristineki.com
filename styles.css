@@ -33,18 +33,39 @@ header .logo {
   letter-spacing: -0.5px;
 }
 
-header nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 24px;
-  font-size: 15px;
-  opacity: 0.8;
-  transition: opacity 0.2s ease;
+/* ============================
+   NAVIGATION (BOLDER + CLEAR HOVER)
+   ============================ */
+
+header nav {
+  display: flex;
+  gap: 40px; /* slightly wider spacing for prominence */
 }
 
-header nav a:hover {
-  opacity: 1;
+header nav a,
+header nav a:link,
+header nav a:visited {
+  color: white;
+  text-decoration: none;
+  font: inherit;
+  font-size: 1.1rem; /* make nav items larger */
+  font-weight: 500;  /* subtle boldness for prominence */
+  letter-spacing: 0.5px; /* cleaner, more intentional look */
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
+
+/* Hover effect: subtle lift + fade */
+header nav a:hover {
+  opacity: 0.75;
+  transform: translateY(-1px);
+}
+
+/* Active click state */
+header nav a:active {
+  opacity: 0.6;
+  transform: translateY(0);
+}
+
 
 /* HERO */
 .hero {
