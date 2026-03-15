@@ -235,6 +235,13 @@ header .logo:hover {
   display: inline-block;
   cursor: pointer;
 }
+header a.logo,
+header a.logo:visited,
+header a.logo:hover,
+header a.logo:active {
+  color: white !important;
+  text-decoration: none !important;
+}
 
 
 
