@@ -225,4 +225,29 @@ footer a:hover {
     align-items: flex-start;
     gap: 12px;
   }
+
+
+/* About page styling */
+/* Center hero content like homepage */
+.about-hero {
+  text-align: center;
+}
+
+/* Circular portrait */
+.portrait {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  margin: 40px auto;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+/* Reduce paragraph spacing for About page */
+.about-text p {
+  margin-bottom: 16px;
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
 }
