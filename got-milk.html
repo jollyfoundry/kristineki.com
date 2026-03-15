@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Got Milk — Case Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO -->
+  <meta name="description" content="A modern Got Milk campaign built to re-energize a cultural icon for a new generation.">
+  <meta property="og:title" content="Got Milk — Case Study">
+  <meta property="og:description" content="A modern Got Milk campaign built to re-energize a cultural icon for a new generation.">
+  <meta property="og:image" content="../images/thumb_milk.jpg">
+  <meta property="og:type" content="website">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Correct staging path -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+<!-- HEADER INCLUDE -->
+<div data-include="partials/header.html"></div>
+
+<section class="hero fade-in">
+  <img src="../images/thumb_milk.jpg" alt="Got Milk campaign">
+  <h1 class="hero-title">Got Milk</h1>
+  <div class="hero-cat">Campaign / Advertising</div>
+  <p class="hero-summary">A modern campaign built to re‑energize a cultural icon for a new generation.</p>
+</section>
+
+<section class="section light fade-in">
+  <h2>Overview</h2>
+  <p>A bold, expressive campaign created to reintroduce a familiar brand with fresh energy and cultural relevance.</p>
+
+  <h3>Challenge</h3>
+  <p>Reframe a legacy brand for a younger audience without losing its iconic status.</p>
+
+  <h3>Approach</h3>
+  <p>Lead with color, confidence, and attitude. Build a visual system that feels modern, vibrant, and unmistakably alive.</p>
+
+  <h3>Deliverables</h3>
+  <p>Campaign concept, outdoor advertising, visual system, art direction.</p>
+</section>
+
+<section class="section dark fade-in">
+  <h2>Process</h2>
+  <p>Explored bold typographic treatments, expressive color palettes, and photography that captured personality and movement.</p>
+</section>
+
+<div class="full-image fade-in">
+  <img src="../images/thumb_milk.jpg" alt="Got Milk campaign visual">
+</div>
+
+<section class="section light fade-in">
+  <h2>Design</h2>
+  <p>The final system balanced clarity and attitude—clean layouts paired with expressive color and confident messaging.</p>
+</section>
+
+<div class="full-image fade-in">
+  <img src="../images/thumb_milk.jpg" alt="Got Milk campaign layout">
+</div>
+
+<section class="section light fade-in">
+  <h2>Outcome</h2>
+  <p>A refreshed campaign that delivered renewed relevance and a modern visual voice for an iconic brand.</p>
+</section>
+
+<section class="next fade-in">
+  <a href="99-brand.html">Next: 99 Brand →</a>
+</section>
+
+<footer>
+  <div>© <span id="year"></span> Kristine Ki. All rights reserved.</div>
+  <div>
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+  </div>
+</footer>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- Correct staging path -->
+<script src="../main.js"></script>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- FOOTER INCLUDE -->
+<div data-include="partials/footer.html"></div>
+
+<!-- INCLUDE LOADER SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('[data-include]').forEach(el => {
+    fetch(el.getAttribute('data-include'))
+      .then(response => response.text())
+      .then(html => el.innerHTML = html);
+  });
+});
+</script>
+
+
+</body>
+</html>
