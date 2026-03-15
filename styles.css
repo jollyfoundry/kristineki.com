@@ -13,6 +13,24 @@ body {
   line-height: 1.6;
 }
 
+/* Case study pages: force full-bleed black background */
+body,
+.case-study,
+.case-study section,
+.case-study .content,
+.work-page,
+.work-page section {
+  background:  #0b0b0b !important;
+  color: #f5f5f5;
+}
+
+/* Remove any accidental white boxes */
+.case-study *,
+.work-page * {
+  background: transparent !important;
+}
+
+
 /* HEADER */
 header {
   position: sticky;
