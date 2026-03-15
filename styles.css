@@ -225,6 +225,14 @@ footer a:hover {
     align-items: flex-start;
     gap: 12px;
   }
+header .logo {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  display: inline-block;
+  cursor: pointer;
+}
 
 
 /* About page styling */
