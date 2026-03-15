@@ -62,7 +62,7 @@ header nav {
 
 header nav a,
 header nav a:link,
-header nav a:visited {
+header nav a:visited, footer a, footer a:link, footer a:visited {
   color: white;
   text-decoration: none;
   font: inherit;
