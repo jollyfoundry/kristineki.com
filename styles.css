@@ -245,9 +245,14 @@ footer a:hover {
 }
 
 /* Reduce paragraph spacing for About page */
+.section .about-text {
+	padding: 64px 24px;
+}
+
 .about-text p {
   margin-bottom: 16px;
   max-width: 70ch;
   margin-left: auto;
   margin-right: auto;
 }
+
