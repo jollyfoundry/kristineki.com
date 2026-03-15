@@ -27,13 +27,8 @@
 
 <body>
 
-<header>
-  <div class="logo">Kristine Ki</div>
-  <nav>
-    <a href="index.html#work">Work</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
+<!-- HEADER INCLUDE -->
+<div data-include="partials/header.html"></div>
 
 <section class="hero fade-in">
   <h1 class="hero-title">Design that brings clarity, energy, and purpose.</h1>
@@ -110,19 +105,23 @@
 
 </section>
 
-<footer>
-  <div>© <span id="year"></span> Kristine Ki. All rights reserved.</div>
-  <div>
-    <a href="index.html#work">Work</a>
-    <a href="about.html">About</a>
-  </div>
-</footer>
+<!-- FOOTER INCLUDE -->
+<div data-include="partials/footer.html"></div>
 
+<!-- EXISTING SCRIPTS (unchanged) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="main.js"></script>
+
+<!-- INCLUDE LOADER SCRIPT -->
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('[data-include]').forEach(el => {
+    fetch(el.getAttribute('data-include'))
+      .then(response => response.text())
+      .then(html => el.innerHTML = html);
+  });
+});
 </script>
 
 </body>
