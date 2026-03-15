@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About — Kristine Ki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="About Kristine Ki, a designer focused on modern brand identities, packaging, and digital experiences.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Kristine Ki</div>
+  <nav>
+    <a href="/index.html#work">Work</a>
+    <a href="/about.html">About</a>
+  </nav>
+</header>
+
+<section class="section dark fade-in">
+  <h2>About</h2>
+  <p>I design modern brand identities, packaging systems, and digital experiences that bring clarity, energy, and purpose to the brands I work with.</p>
+  <p>This page can be expanded with your story, process, and selected clients when you’re ready.</p>
+</section>
+
+<footer>
+  <div>© <span id="year"></span> Kristine Ki. All rights reserved.</div>
+  <div>
+    <a href="/index.html#work">Work</a>
+    <a href="/about.html">About</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="/main.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
