@@ -44,18 +44,19 @@ if (track) {
 
   // Focus scaling + opacity
   document.querySelectorAll(".project").forEach((proj) => {
-    gsap.to(proj, {
-      scale: 1.15,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: proj,
-        containerAnimation: horizontalScroll,
-        start: "center center",
-        end: "center center",
-        toggleActions: "play reverse play reverse"
-      }
-    });
-  });
+<<< NEW CODE START
+gsap.to(proj, {
+  scale: 1.15,
+  opacity: 1,
+  scrollTrigger: {
+    trigger: proj,
+    containerAnimation: ScrollTrigger.getById("horizontal"),
+    start: "center center",
+    end: "center center",
+    toggleActions: "play reverse play reverse"
+  }
+});
+<<< NEW CODE END
 }
 
 

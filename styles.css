@@ -277,22 +277,33 @@ header a.logo:focus {
    FULL‑HEIGHT HERO (HOMEPAGE)
 ------------------------------------------------------- */
 
+<<< NEW CODE START
+/* HOMEPAGE HERO — REDUCED HEIGHT + FULL‑BLEED GRADIENT */
 .hero-full {
-  height: 100vh;
+  height: 82vh; /* reduced from 100vh */
   display: flex;
-  align-items: flex-start;
+  align-items: center; /* centers vertically in a more natural way */
   justify-content: center;
-  padding-top: 18vh;
+  padding-top: 0; /* remove artificial push-down */
   text-align: center;
   position: relative;
   color: #fff;
+  transform: translateY(-6vh);
+
+
+  /* full‑bleed, softer, more atmospheric gradient */
   background: radial-gradient(
     circle at center,
-    rgba(255, 255, 255, 0.06) 0%,
-    rgba(0, 0, 0, 0.9) 70%
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(0, 0, 0, 0.92) 85%
   );
-  overflow: hidden;
+
+  /* ensures gradient fills beyond container edges */
+  background-size: 160% 160%;
+  background-position: center;
 }
+<<< NEW CODE END
+
 
 .hero-full .hero-inner {
   max-width: 720px;
