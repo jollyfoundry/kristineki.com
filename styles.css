@@ -314,3 +314,148 @@ header a.logo:focus {
   margin-right: auto;
 }
 
+/* -------------------------------------------------------
+   FULL‑HEIGHT HERO
+------------------------------------------------------- */
+
+.hero-full {
+  height: 100vh;
+  display: flex;
+  align-items: flex-start; /* allows “slightly above center” */
+  justify-content: center;
+  padding-top: 18vh; /* controls vertical offset */
+  text-align: center;
+  position: relative;
+  color: #fff;
+  background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(0, 0, 0, 0.9) 70%
+  );
+  overflow: hidden;
+}
+
+.hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+
+.hero-summary {
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  font-weight: 300;
+  line-height: 1.55;
+  opacity: 0.85;
+}
+
+
+/* -------------------------------------------------------
+   HORIZONTAL SCROLL GALLERY (DESKTOP)
+------------------------------------------------------- */
+
+.horizontal-gallery {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.h-scroll-wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.h-scroll-track {
+  display: flex;
+  gap: 8vw;
+  padding: 0 10vw;
+  height: 100%;
+  align-items: center;
+}
+
+.project {
+  flex: 0 0 auto;
+  width: 38vw;
+  max-width: 520px;
+  text-decoration: none;
+  color: inherit;
+  transform: scale(1);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 0.8rem;
+}
+
+.project-cat {
+  font-size: 0.95rem;
+  opacity: 0.7;
+  margin-top: 0.2rem;
+}
+
+
+/* -------------------------------------------------------
+   MOBILE — VERTICAL STACK + PARALLAX
+------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .horizontal-gallery {
+    height: auto;
+    overflow: visible;
+    padding: 12vh 0;
+  }
+
+  .h-scroll-wrapper,
+  .h-scroll-track {
+    display: block;
+    height: auto;
+    padding: 0;
+  }
+
+  .project {
+    width: 88%;
+    margin: 0 auto 14vh auto;
+    opacity: 1;
+    transform: none !important;
+  }
+
+  .project img {
+    transform: translateY(0);
+    transition: transform 0.4s ease-out;
+  }
+
+  /* Parallax effect */
+  .project[data-parallax] img {
+    will-change: transform;
+  }
+}
+
+
+/* -------------------------------------------------------
+   OPTIONAL: SMOOTHER SCROLLING FEEL
+------------------------------------------------------- */
+
+body {
+  scroll-behavior: smooth;
+}
