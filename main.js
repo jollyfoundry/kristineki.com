@@ -1,10 +1,12 @@
-// Register GSAP plugins
+/* -------------------------------------------------------
+   REGISTER PLUGINS
+------------------------------------------------------- */
 gsap.registerPlugin(ScrollTrigger);
 
-/* -------------------------------------------------------
-   HERO FADE + UPWARD SLIDE ON SCROLL
-------------------------------------------------------- */
 
+/* -------------------------------------------------------
+   HERO FADE + SLIDE
+------------------------------------------------------- */
 gsap.to(".hero-inner", {
   opacity: 0,
   y: -40,
@@ -24,15 +26,16 @@ gsap.to(".hero-inner", {
 const track = document.querySelector(".h-scroll-track");
 
 if (track) {
+
   const trackWidth = track.scrollWidth;
   const viewportWidth = window.innerWidth;
 
-  // Horizontal scroll animation
+  /* MAIN HORIZONTAL SCROLL ANIMATION */
   const horizontalScroll = gsap.to(track, {
+    id: "horizontal",   // IMPORTANT: gives ScrollTrigger an ID
     x: () => -(trackWidth - viewportWidth),
     ease: "none",
     scrollTrigger: {
-      id: "horizontal",
       trigger: ".horizontal-gallery",
       start: "top top",
       end: () => "+=" + (trackWidth - viewportWidth),
@@ -42,21 +45,20 @@ if (track) {
     }
   });
 
-  // Focus scaling + opacity
+  /* FOCUS SCALE + OPACITY */
   document.querySelectorAll(".project").forEach((proj) => {
-<<< NEW CODE START
-gsap.to(proj, {
-  scale: 1.15,
-  opacity: 1,
-  scrollTrigger: {
-    trigger: proj,
-    containerAnimation: ScrollTrigger.getById("horizontal"),
-    start: "center center",
-    end: "center center",
-    toggleActions: "play reverse play reverse"
-  }
-});
-<<< NEW CODE END
+    gsap.to(proj, {
+      scale: 1.15,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: proj,
+        containerAnimation: horizontalScroll,  // CORRECT LINK
+        start: "center center",
+        end: "center center",
+        toggleActions: "play reverse play reverse"
+      }
+    });
+  });
 }
 
 
@@ -81,10 +83,9 @@ if (window.innerWidth < 900) {
 
 
 /* -------------------------------------------------------
-   CASE STUDY PAGE ANIMATIONS (UNCHANGED)
+   CASE STUDY PAGE ANIMATIONS
 ------------------------------------------------------- */
 
-// Case study sections fade-in
 gsap.utils.toArray(".section").forEach((section) => {
   gsap.from(section, {
     scrollTrigger: {
@@ -98,7 +99,6 @@ gsap.utils.toArray(".section").forEach((section) => {
   });
 });
 
-// Full-width images fade-in
 gsap.utils.toArray(".full-image img").forEach((img) => {
   gsap.from(img, {
     scrollTrigger: {
