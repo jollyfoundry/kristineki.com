@@ -30,7 +30,7 @@
 <!-- HEADER INCLUDE -->
 <div data-include="partials/header.html"></div>
 
-<!-- NEW FULL-HEIGHT HERO -->
+<!-- FULL-HEIGHT HERO -->
 <section class="hero hero-full">
   <div class="hero-inner">
     <h1 class="hero-title">Design that brings clarity, energy, and purpose.</h1>
@@ -38,13 +38,11 @@
   </div>
 </section>
 
-<!-- NEW HORIZONTAL SCROLL GALLERY -->
+<!-- HORIZONTAL SCROLL GALLERY -->
 <section id="work" class="horizontal-gallery">
-
   <div class="h-scroll-wrapper">
     <div class="h-scroll-track">
 
-      <!-- Existing projects preserved in original order -->
       <a class="project" href="work/got-milk.html">
         <img src="images/thumb_milk.jpg" alt="Got Milk campaign">
         <div class="project-title">Got Milk</div>
@@ -113,7 +111,6 @@
 
     </div>
   </div>
-
 </section>
 
 <!-- FOOTER INCLUDE -->
@@ -123,57 +120,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-<!-- NEW SCROLL LOGIC -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* HERO FADE + SLIDE */
-  gsap.to(".hero-inner", {
-    opacity: 0,
-    y: -40,
-    scrollTrigger: {
-      trigger: ".hero",
-      start: "top top",
-      end: "bottom top",
-      scrub: true
-    }
-  });
-
-  /* HORIZONTAL SCROLL */
-  const track = document.querySelector(".h-scroll-track");
-  const trackWidth = track.scrollWidth;
-  const viewportWidth = window.innerWidth;
-
-  gsap.to(track, {
-    x: () => -(trackWidth - viewportWidth),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".horizontal-gallery",
-      start: "top top",
-      end: () => "+=" + (trackWidth - viewportWidth),
-      scrub: true,
-      pin: true
-    }
-  });
-
-  /* FOCUS SCALE + OPACITY */
-  document.querySelectorAll(".project").forEach((proj) => {
-    gsap.to(proj, {
-      scale: 1.15,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: proj,
-        containerAnimation: ScrollTrigger.getById("hscroll"),
-        start: "center center",
-        end: "center center",
-        toggleActions: "play reverse play reverse"
-      }
-    });
-  });
-
-});
-</script>
-<!-- MAIN JS (this was missing) -->
+<!-- MAIN JS -->
 <script src="main.js?v=3"></script>
 
 <!-- INCLUDE LOADER SCRIPT -->
@@ -184,8 +131,6 @@ document.querySelectorAll('[data-include]').forEach(el => {
     .then(html => el.innerHTML = html);
 });
 </script>
-
-
 
 </body>
 </html>
