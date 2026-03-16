@@ -373,6 +373,17 @@ header a.logo:focus {
   transition: opacity 0.3s ease;
 }
 
+/* DESKTOP HOVER SCALE */
+@media (hover: hover) and (pointer: fine) {
+  .horizontal-gallery .project:hover {
+    transform: scale(1.08);   /* subtle, premium lift */
+    opacity: 1;               /* matches GSAP focus state */
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+}
+
+
+
 /* -------------------------------------------------------
    MOBILE — VERTICAL STACK + PARALLAX
 ------------------------------------------------------- */
