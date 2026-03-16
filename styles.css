@@ -277,7 +277,6 @@ header a.logo:focus {
    FULL‑HEIGHT HERO (HOMEPAGE)
 ------------------------------------------------------- */
 
-<<< NEW CODE START
 /* HOMEPAGE HERO — REDUCED HEIGHT + FULL‑BLEED GRADIENT */
 .hero-full {
   height: 82vh; /* reduced from 100vh */
@@ -302,8 +301,6 @@ header a.logo:focus {
   background-size: 160% 160%;
   background-position: center;
 }
-<<< NEW CODE END
-
 
 .hero-full .hero-inner {
   max-width: 720px;
@@ -372,6 +369,16 @@ header a.logo:focus {
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
+
+/* HOVER SCALE — FIXED VERSION */
+@media (hover: hover) and (pointer: fine) {
+  .horizontal-gallery .project:hover {
+    transform: scale(1.08) !important;  /* override GSAP inline transform */
+    opacity: 1;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+}
+
 
 /* DESKTOP HOVER SCALE */
 @media (hover: hover) and (pointer: fine) {
