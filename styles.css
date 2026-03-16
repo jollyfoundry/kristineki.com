@@ -378,16 +378,19 @@ header a.logo:focus {
     transition: transform 0.35s ease, opacity 0.35s ease;
   }
 }
-
-
-/* DESKTOP HOVER SCALE */
+/* SOFT SHADOW + MICRO PARALLAX TILT */
 @media (hover: hover) and (pointer: fine) {
+  .horizontal-gallery .project {
+    perspective: 900px; /* enables subtle 3D tilt */
+    transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
+  }
+
   .horizontal-gallery .project:hover {
-    transform: scale(1.08);   /* subtle, premium lift */
-    opacity: 1;               /* matches GSAP focus state */
-    transition: transform 0.35s ease, opacity 0.35s ease;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.45); /* soft premium shadow */
   }
 }
+
+
 
 
 

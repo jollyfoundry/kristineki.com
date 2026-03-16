@@ -59,6 +59,33 @@ if (track) {
       }
     });
   });
+  
+/* MICRO PARALLAX TILT ON HOVER */
+document.querySelectorAll(".project").forEach((proj) => {
+  proj.addEventListener("mousemove", (e) => {
+    const rect = proj.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    gsap.to(proj, {
+      rotateY: x * 0.03,   // subtle horizontal tilt
+      rotateX: -y * 0.03,  // subtle vertical tilt
+      duration: 0.3,
+      ease: "power2.out"
+    });
+  });
+
+  proj.addEventListener("mouseleave", () => {
+    gsap.to(proj, {
+      rotateX: 0,
+      rotateY: 0,
+      duration: 0.4,
+      ease: "power3.out"
+    });
+  });
+});
+/* END MICRO PARALLAX TILT ON HOVER */
+
 }
 
 
