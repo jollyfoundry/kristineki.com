@@ -11,6 +11,7 @@ body {
   background: #0b0b0b;
   color: #f5f5f5;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 /* Case study pages: force full-bleed black background */
@@ -20,7 +21,7 @@ body,
 .case-study .content,
 .work-page,
 .work-page section {
-  background:  #0b0b0b !important;
+  background: #0b0b0b !important;
   color: #f5f5f5;
 }
 
@@ -29,7 +30,6 @@ body,
 .work-page * {
   background: transparent !important;
 }
-
 
 /* HEADER */
 header {
@@ -51,41 +51,38 @@ header .logo {
   letter-spacing: -0.5px;
 }
 
-/* ============================
-   NAVIGATION (BOLDER + CLEAR HOVER)
-   ============================ */
-
+/* NAVIGATION */
 header nav {
   display: flex;
-  gap: 40px; /* slightly wider spacing for prominence */
+  gap: 40px;
 }
 
 header nav a,
 header nav a:link,
-header nav a:visited, footer a, footer a:link, footer a:visited {
+header nav a:visited,
+footer a,
+footer a:link,
+footer a:visited {
   color: white;
   text-decoration: none;
   font: inherit;
-  font-size: 1.1rem; /* make nav items larger */
-  font-weight: 500;  /* subtle boldness for prominence */
-  letter-spacing: 0.5px; /* cleaner, more intentional look */
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-/* Hover effect: subtle lift + fade */
 header nav a:hover {
   opacity: 0.75;
   transform: translateY(-1px);
 }
 
-/* Active click state */
 header nav a:active {
   opacity: 0.6;
   transform: translateY(0);
 }
 
-
-/* HERO */
+/* HERO (generic) */
 .hero {
   padding: 160px 24px 120px;
   text-align: center;
@@ -127,7 +124,6 @@ header nav a:active {
   margin: 0 auto;
 }
 
-
 .dark {
   background: #0b0b0b;
   color: #f5f5f5;
@@ -167,7 +163,6 @@ header nav a:active {
   padding-bottom: 4px;
 }
 
-
 /* FOOTER */
 footer {
   padding: 40px 24px 32px;
@@ -195,10 +190,10 @@ footer a:hover {
 
 /* ANIMATION HOOKS */
 .fade-in {
-   /* no default opacity or transform */
+  /* intentionally empty */
 }
 
-/* MOBILE */
+/* MOBILE HEADER + LAYOUT */
 @media (max-width: 768px) {
   header {
     padding: 16px 20px;
@@ -220,17 +215,14 @@ footer a:hover {
     padding: 80px 20px;
   }
 
-  .gallery {
-    grid-template-columns: 1fr;
-    gap: 64px;
-    padding: 80px 24px;
-  }
-
   footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
+}
+
+/* HEADER LOGO LINKS */
 header .logo,
 header .logo:visited,
 header .logo:active,
@@ -255,14 +247,11 @@ header a.logo:focus {
   cursor: pointer;
 }
 
-
-/* About page styling */
-/* Center hero content like homepage */
+/* ABOUT PAGE */
 .about-hero {
   text-align: center;
 }
 
-/* Circular portrait */
 .portrait {
   width: 180px;
   height: 180px;
@@ -273,9 +262,8 @@ header a.logo:focus {
   overflow: hidden;
 }
 
-/* Reduce paragraph spacing for About page */
 .section .about-text {
-	padding: 64px 24px;
+  padding: 64px 24px;
 }
 
 .about-text p {
@@ -286,49 +274,34 @@ header a.logo:focus {
 }
 
 /* -------------------------------------------------------
-   FULL‑HEIGHT HERO
+   FULL‑HEIGHT HERO (HOMEPAGE)
 ------------------------------------------------------- */
 
 .hero-full {
   height: 100vh;
   display: flex;
-  align-items: flex-start; /* allows “slightly above center” */
+  align-items: flex-start;
   justify-content: center;
-  padding-top: 18vh; /* controls vertical offset */
+  padding-top: 18vh;
   text-align: center;
   position: relative;
   color: #fff;
   background: radial-gradient(
-      circle at center,
-      rgba(255, 255, 255, 0.06) 0%,
-      rgba(0, 0, 0, 0.9) 70%
+    circle at center,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(0, 0, 0, 0.9) 70%
   );
   overflow: hidden;
 }
 
-.hero-inner {
+.hero-full .hero-inner {
   max-width: 720px;
   margin: 0 auto;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.hero-title {
-  font-size: clamp(2.4rem, 4vw, 4rem);
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 1.2rem;
-}
-
-.hero-summary {
-  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
-  font-weight: 300;
-  line-height: 1.55;
-  opacity: 0.85;
-}
-<<< NEW CODE START
-/* RESTORED PROJECT BASE STYLES (REQUIRED FOR HORIZONTAL SCROLL) */
+/* -------------------------------------------------------
+   PROJECT BASE STYLES (USED BY HORIZONTAL GALLERY)
+------------------------------------------------------- */
 
 .project {
   text-decoration: none;
@@ -339,6 +312,7 @@ header a.logo:focus {
   width: 100%;
   border-radius: 12px;
   margin-bottom: 16px;
+  display: block;
 }
 
 .project-title {
@@ -353,18 +327,6 @@ header a.logo:focus {
   opacity: 0.6;
   margin-top: 0.2rem;
 }
-<<< NEW CODE END
-
-/* -------------------------------------------------------
-   HORIZONTAL SCROLL GALLERY (DESKTOP)
-------------------------------------------------------- */
-.horizontal-gallery {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
 
 /* -------------------------------------------------------
    HORIZONTAL SCROLL GALLERY (DESKTOP)
@@ -391,36 +353,14 @@ header a.logo:focus {
   align-items: center;
 }
 
-.project {
+.horizontal-gallery .project {
   flex: 0 0 auto;
   width: 38vw;
   max-width: 520px;
-  text-decoration: none;
-  color: inherit;
   transform: scale(1);
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
-
-.project img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  display: block;
-}
-
-.project-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-top: 0.8rem;
-}
-
-.project-cat {
-  font-size: 0.95rem;
-  opacity: 0.7;
-  margin-top: 0.2rem;
-}
-
 
 /* -------------------------------------------------------
    MOBILE — VERTICAL STACK + PARALLAX
@@ -441,29 +381,19 @@ header a.logo:focus {
     padding: 0;
   }
 
-  .project {
+  .horizontal-gallery .project {
     width: 88%;
     margin: 0 auto 14vh auto;
     opacity: 1;
     transform: none !important;
   }
 
-  .project img {
+  .horizontal-gallery .project img {
     transform: translateY(0);
     transition: transform 0.4s ease-out;
   }
 
-  /* Parallax effect */
-  .project[data-parallax] img {
+  .horizontal-gallery .project[data-parallax] img {
     will-change: transform;
   }
-}
-
-
-/* -------------------------------------------------------
-   OPTIONAL: SMOOTHER SCROLLING FEEL
-------------------------------------------------------- */
-
-body {
-  scroll-behavior: smooth;
 }
